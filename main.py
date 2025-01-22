@@ -35,13 +35,13 @@ def start_timer():
 
     if reps % 8 == 0:
         count_down(long_break_sec)
-        label_timer.config(text="Break", fg=RED)
+        label_timer.config(text="Time for a break!", fg=RED)
     elif reps % 2 == 0:
         count_down(short_break_sec)
-        label_timer.config(text="Break", fg=PINK)
+        label_timer.config(text="Time for a break!", fg=PINK)
     else:
         count_down(work_sec)
-        label_timer.config(text="Work", fg=GREEN)
+        label_timer.config(text="Let's get to work", fg=GREEN)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -67,7 +67,7 @@ def count_down(count):
 
 # ---------------------------- UI SETUP ------------------------------- #
 window= Tk()
-window.title("Pomodoro")
+window.title("Pomodoro study timer")
 window.config(padx=100, pady=50, bg=YELLOW)
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
@@ -76,7 +76,7 @@ canvas.create_image(100, 112, image=tomato_img)
 timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-label_timer = Label(text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50))
+label_timer = Label(text="Pomodoro study timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50))
 label_timer.grid(column=1, row=0)
 
 label_check= Label(fg=GREEN, bg=YELLOW)
